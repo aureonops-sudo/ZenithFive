@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenithFive | F1 in Schools 2026 – Sponsorship</title>
+
+    <!-- Fonts matching logo style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,900&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwindcss.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        crimson: {
+                            DEFAULT: '#B91C1C',
+                            bright: '#DC2626',
+                            dark: '#7F1D1D',
+                        },
+                        base: {
+                            dark: '#0A0A0A',
+                            neutral1: '#141414',
+                            neutral2: '#1E1E1E',
+                            neutral3: '#888888',
+                            light: '#F5F0EB',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        sub: ['"Oswald"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --crimson: #B91C1C;
+            --crimson-bright: #DC2626;
+            --dark-base: #0A0A0A;
+            --off-white: #F5F0EB;
+            --neutral-1: #141414;
+            --neutral-2: #1E1E1E;
+            --neutral-3: #888888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--dark-base);
+            color: var(--off-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .sub-heading {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .accent-line {
+            height: 3px;
+            background: linear-gradient(90deg, var(--crimson), var(--crimson-bright), var(--crimson));
+            width: 100%;
+        }
+
+        .accent-line-short {
+            height: 3px;
+            width: 80px;
+            background: var(--crimson);
+        }
+
+        .tier-card {
+            background: var(--neutral-1);
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            border-top: 4px solid transparent;
+            position: relative;
+        }
+
+        .tier-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(185, 28, 28, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: inherit;
+        }
+
+        @media (hover: hover) {
+            .tier-card:hover {
+                transform: translateY(-12px);
+                box-shadow: 0 20px 60px rgba(185, 28, 28, 0.15);
+            }
+            .tier-card:hover::before {
+                opacity: 1;
+            }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.3) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient {
+                background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.95) 60%, rgba(10,10,10,1) 100%);
+            }
+        }
+
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(185, 28, 28, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark-base); }
+        ::-webkit-scrollbar-thumb { background: var(--crimson); border-radius: 4px; }
+
+        .logo-img {
+            filter: drop-shadow(0 0 8px rgba(185, 28, 28, 0.3));
+        }
+
+        .hover-underline { position: relative; }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--crimson);
+            transition: width 0.3s ease;
+        }
+        .hover-underline:hover::after { width: 100%; }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: var(--crimson-bright);
+        }
+
+        .member-card {
+            background: var(--neutral-2);
+            border-left: 4px solid var(--crimson);
+            transition: all 0.3s ease;
+        }
+        @media (hover: hover) {
+            .member-card:hover {
+                background: rgba(185, 28, 28, 0.08);
+                transform: translateX(6px);
+            }
+        }
+
+        .section-tag {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            color: var(--crimson-bright);
+            text-transform: uppercase;
+        }
+
+        .placement-card {
+            background: #ffffff;
+            border-right: 4px solid var(--crimson);
+            transition: all 0.3s ease;
+        }
+        @media (hover: hover) {
+            .placement-card:hover {
+                box-shadow: 0 8px 30px rgba(185, 28, 28, 0.1);
+                transform: translateX(-4px);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(185, 28, 28, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.7); }
+        }
+        .glow-ring { animation: pulseGlow 2.5s ease-in-out infinite; }
+
+        /* Regional highlight pulse */
+        @keyframes regionalPulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(220, 38, 38, 0.6), 0 0 25px rgba(220, 38, 38, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.9), 0 0 45px rgba(220, 38, 38, 0.5); }
+        }
+        .regional-glow { animation: regionalPulse 2s ease-in-out infinite; }
+
+        .stripe-bg {
+            background-image: repeating-linear-gradient(
+                -45deg, transparent, transparent 40px,
+                rgba(185, 28, 28, 0.03) 40px, rgba(185, 28, 28, 0.03) 80px
+            );
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-menu-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Hamburger animation */
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--off-white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Recommended badge above card */
+        .recommended-badge {
+            display: inline-block;
+            background: var(--crimson);
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 9999px 9999px 0 0;
+            box-shadow: 0 -4px 15px rgba(185, 28, 28, 0.4);
+            white-space: nowrap;
+        }
+
+        /* Video container */
+        .video-container {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+        }
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel py-3 px-4 sm:px-6 md:px-8 flex items-center justify-between" style="border-bottom: 1px solid rgba(185,28,28,0.15);">
+        <div class="flex items-center gap-3">
+            <!-- INCREASED logo size in nav -->
+            <img src="logo2.png" alt="ZenithFive Logo" class="logo-img h-10 sm:h-14 md:h-16">
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-semibold tracking-[0.15em] uppercase">
+            <a href="#stage" class="hover-underline text-neutral-300 hover:text-white transition">The Stage</a>
+            <a href="#team" class="hover-underline text-neutral-300 hover:text-white transition">Team</a>
+            <a href="#tiers" class="hover-underline text-neutral-300 hover:text-white transition">Partner</a>
+            <a href="#contact" class="px-4 py-2 rounded-full text-white font-bold transition text-[11px]" style="background: var(--crimson); border: 1px solid var(--crimson-bright);">Contact Us</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="hamburger md:hidden flex flex-col gap-[6px] p-2 z-[60]" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay fixed inset-0 bg-black/60 z-40" id="menuOverlay"></div>
+
+    <!-- Mobile Slide Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-[280px] h-full z-50 flex flex-col pt-20 px-8 gap-6" id="mobileMenu" style="background: var(--neutral-1); border-left: 1px solid rgba(185,28,28,0.2);">
+        <a href="#stage" class="mobile-link text-lg font-semibold sub-heading text-neutral-300 hover:text-white transition py-3 border-b border-neutral-800">The Stage</a>
+        <a href="#team" class="mobile-link text-lg font-semibold sub-heading text-neutral-300 hover:text-white transition py-3 border-b border-neutral-800">Team</a>
+        <a href="#tiers" class="mobile-link text-lg font-semibold sub-heading text-neutral-300 hover:text-white transition py-3 border-b border-neutral-800">Partner</a>
+        <a href="#contact" class="mobile-link mt-4 px-6 py-3 rounded-full text-white font-bold transition text-center sub-heading text-sm" style="background: var(--crimson); border: 1px solid var(--crimson-bright);">Contact Us</a>
+
+        <div class="mt-auto pb-10">
+            <img src="logo2.png" alt="ZenithFive" class="h-10 opacity-40">
+        </div>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-screen w-full flex items-end sm:items-center overflow-hidden pb-16 sm:pb-0">
+        <div class="absolute inset-0 z-0">
+            <img src="hero.png" class="w-full h-full object-cover opacity-70 filter blur-[1px]" alt="F1 Racing Car">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="container mx-auto px-5 sm:px-8 md:px-10 z-10 pt-20 sm:pt-0">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <!-- INCREASED hero logo size -->
+                <img src="logo2.png" alt="ZenithFive" class="h-32 sm:h-40 md:h-48 lg:h-56 mb-5 sm:mb-8" data-aos="fade-down" data-aos-delay="200">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-black leading-[0.9]">
+                    YOUR BRAND.<br>
+                    <span style="color: var(--crimson-bright);">OUR TRACK.</span>
+                </h1>
+                <h2 class="sub-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl mt-3 sm:mt-4 text-neutral-400 italic font-normal" style="letter-spacing: 0.08em;">The World Stage.</h2>
+
+                <div class="accent-line-short my-5 sm:my-8"></div>
+
+                <p class="sub-heading text-neutral-500 text-[10px] sm:text-xs mb-6 sm:mb-10" style="letter-spacing: 0.25em;">
+                    Sponsorship Opportunities &nbsp;|&nbsp; ZenithFive &nbsp;|&nbsp; 2026
+                </p>
+
+                <div class="flex items-center space-x-4 sm:space-x-6 opacity-70">
+                    <span class="text-[10px] sm:text-xs font-semibold tracking-widest sub-heading">COMPETING IN</span>
+                    <div class="h-6 sm:h-8 w-px bg-neutral-700"></div>
+                    <!-- INCREASED F1 in Schools logo size -->
+                    <img src="logo3.png" class="h-8 sm:h-10 md:h-12" alt="F1 Logo">
+                    <span class="font-bold text-sm sm:text-lg sub-heading">F1 IN SCHOOLS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full accent-line"></div>
+    </section>
+
+    <!-- SECTION 2: THE STAGE -->
+    <section id="stage" class="py-16 sm:py-20 md:py-28 stripe-bg" style="background-color: var(--dark-base);">
+        <div class="container mx-auto px-5 sm:px-8 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div data-aos="fade-up">
+                <span class="section-tag">THE STAGE</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mt-3 mb-8 sm:mb-12 leading-tight">THE MOST AMBITIOUS<br>ENGINEERING CHALLENGE</h2>
+
+                <div class="space-y-8 sm:space-y-12">
+                    <div>
+                        <h3 class="section-tag mb-1">THE AUTHORITY</h3>
+                        <p class="text-xl sm:text-2xl font-bold italic" style="font-family: 'Playfair Display', serif;">FORMULA 1® ENDORSED</p>
+                        <p class="text-neutral-500 mt-1 text-sm sm:text-base">A globally recognized STEM and engineering competition pathway.</p>
+                    </div>
+                    <div>
+                        <h3 class="section-tag mb-1">THE CHALLENGE</h3>
+                        <p class="text-xl sm:text-2xl font-bold italic" style="font-family: 'Playfair Display', serif;">DESIGN. BUILD. BRAND. RACE.</p>
+                        <p class="text-neutral-500 mt-1 text-sm sm:text-base">Full-scale aerodynamics using CAD, CFD, and precision manufacturing.</p>
+                    </div>
+                    <div>
+                        <h3 class="section-tag mb-1">THE GOAL</h3>
+                        <p class="text-xl sm:text-2xl font-bold italic" style="font-family: 'Playfair Display', serif;">REACH THE WORLD FINALS</p>
+                        <p class="text-neutral-500 mt-1 text-sm sm:text-base">Compete against the best student engineering teams on the planet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in">
+                <div class="border border-neutral-800 p-6 sm:p-10 rounded-2xl" style="background: rgba(20,20,20,0.5);">
+                    <p class="section-tag text-center mb-6 sm:mb-8">Competition Pathway</p>
+                    <div class="flex justify-between items-center text-center">
+                        <!-- REGIONAL — Highlighted as current stage -->
+                        <div class="relative">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mx-auto mb-2 sm:mb-3 regional-glow flex items-center justify-center" style="background: var(--crimson-bright); border: 3px solid #fff;">
+                                <span class="text-white text-xs sm:text-sm font-black">▶</span>
+                            </div>
+                            <p class="text-[10px] sm:text-xs font-bold sub-heading text-white">REGIONAL</p>
+                            <p class="text-[8px] sm:text-[9px] font-semibold sub-heading mt-1" style="color: var(--crimson-bright); letter-spacing: 0.15em;">WE ARE HERE</p>
+                        </div>
+                        <div class="flex-1 h-px border-t border-dashed mx-2 sm:mx-4" style="border-color: var(--neutral-3);"></div>
+                        <!-- NATIONAL -->
+                        <div>
+                            <div class="w-5 h-5 sm:w-7 sm:h-7 rounded-full mx-auto mb-2 sm:mb-3 opacity-40" style="background: var(--neutral-3);"></div>
+                            <p class="text-[10px] sm:text-xs font-bold sub-heading text-neutral-500">NATIONAL</p>
+                        </div>
+                        <div class="flex-1 h-px border-t border-dashed mx-2 sm:mx-4" style="border-color: var(--neutral-3);"></div>
+                        <!-- WORLD FINALS -->
+                        <div>
+                            <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full mx-auto mb-2 sm:mb-3 flex items-center justify-center text-sm sm:text-base opacity-40" style="background: var(--neutral-3);">
+                                🌍
+                            </div>
+                            <p class="text-[10px] sm:text-xs font-bold sub-heading text-neutral-500">WORLD FINALS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIDEO in white rounded container, looping autoplay -->
+                <div class="video-container mt-6 sm:mt-10" data-aos="fade-up" data-aos-delay="200">
+                    <video src="Car.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE TEAM -->
+    <section id="team" class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left Panel -->
+        <div class="md:w-1/3 relative overflow-hidden flex items-end p-6 sm:p-10 min-h-[250px] sm:min-h-[300px] md:min-h-0" style="background: var(--crimson);">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-70" alt="Team Collaboration">
+            <div class="relative z-10">
+                <!-- INCREASED team panel logo -->
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-none" style="font-family: 'Playfair Display', serif;">ZENITHFIVE</h2>
+                <p class="text-black font-bold uppercase text-xs sm:text-sm tracking-[0.2em] mt-1 sub-heading">Racing Team · 2026</p>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="md:w-2/3 p-6 sm:p-10 md:p-16 lg:p-20" style="background: var(--dark-base);">
+            <div data-aos="fade-left">
+                <span class="section-tag">THE TEAM</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mt-3 mb-4">BUILT DIFFERENT.</h2>
+                <p class="text-neutral-400 text-sm sm:text-base md:text-lg max-w-xl mb-8 sm:mb-12">
+                    Five minds. One mission. We handle every aspect of our project—from computational fluid dynamics to brand strategy—mirroring the operations of a real-world Formula 1 team.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    <div class="member-card p-4 sm:p-6 rounded-xl">
+                        <p class="text-[10px] sm:text-xs font-bold sub-heading" style="color: var(--crimson-bright);">PROJECT MANAGER</p>
+                        <h4 class="text-lg sm:text-xl font-bold mt-1">SUMIT</h4>
+                        <p class="text-neutral-500 text-xs sm:text-sm mt-1">Strategy, coordination, and project leadership.</p>
+                    </div>
+                    <div class="member-card p-4 sm:p-6 rounded-xl">
+                        <p class="text-[10px] sm:text-xs font-bold sub-heading" style="color: var(--crimson-bright);">D&E MANAGER</p>
+                        <h4 class="text-lg sm:text-xl font-bold mt-1">SHRIHAN</h4>
+                        <p class="text-neutral-500 text-xs sm:text-sm mt-1">Design engineering, CAD and aerodynamic research.</p>
+                    </div>
+                    <div class="member-card p-4 sm:p-6 rounded-xl">
+                        <p class="text-[10px] sm:text-xs font-bold sub-heading" style="color: var(--crimson-bright);">ASSETS MANAGER</p>
+                        <h4 class="text-lg sm:text-xl font-bold mt-1">PRANITH</h4>
+                        <p class="text-neutral-500 text-xs sm:text-sm mt-1">Resource management and manufacturing oversight.</p>
+                    </div>
+                    <div class="member-card p-4 sm:p-6 rounded-xl">
+                        <p class="text-[10px] sm:text-xs font-bold sub-heading" style="color: var(--crimson-bright);">GRAPHIC DESIGNER</p>
+                        <h4 class="text-lg sm:text-xl font-bold mt-1">AARAV</h4>
+                        <p class="text-neutral-500 text-xs sm:text-sm mt-1">Brand identity, livery design, and visual content.</p>
+                    </div>
+                    <div class="member-card p-4 sm:p-6 rounded-xl sm:col-span-2">
+                        <p class="text-[10px] sm:text-xs font-bold sub-heading" style="color: var(--crimson-bright);">TEAM MANAGER</p>
+                        <h4 class="text-lg sm:text-xl font-bold mt-1">SAI KESHAV</h4>
+                        <p class="text-neutral-500 text-xs sm:text-sm mt-1">Team operations, sponsor relations, and competition logistics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SPONSORSHIP TIERS -->
+    <section id="tiers" class="py-16 sm:py-20 md:py-28 stripe-bg" style="background-color: var(--dark-base);">
+        <div class="container mx-auto px-5 sm:px-8 md:px-10 text-center mb-12 sm:mb-16 md:mb-20">
+            <span class="section-tag">YOUR INVESTMENT</span>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mt-3">PARTNERSHIP TIERS</h2>
+            <p class="text-neutral-500 mt-3 sm:mt-4 max-w-xl mx-auto text-sm sm:text-base">Choose the partnership level that aligns with your brand. Every tier delivers real, tangible visibility.</p>
+        </div>
+
+        <div class="container mx-auto px-5 sm:px-8 md:px-10">
+
+            <!-- MOBILE LAYOUT (below md) -->
+            <div class="flex flex-col gap-6 md:hidden">
+                <!-- Title Partner first on mobile — badge ABOVE the card -->
+                <div class="flex flex-col items-center" data-aos="fade-up">
+                    <div class="recommended-badge">★ MOST IMPACTFUL</div>
+                    <div class="tier-card p-8 rounded-b-2xl rounded-t-none w-full" style="border-top: 4px solid var(--crimson-bright); background: var(--neutral-2);">
+                        <p class="text-neutral-500 text-xs font-bold sub-heading mt-2">STARTING FROM</p>
+                        <p class="text-4xl sm:text-5xl font-black mb-1" style="font-family: 'Playfair Display', serif;">₹50,000</p>
+                        <h3 class="font-bold mb-5 sub-heading text-sm" style="color: var(--crimson-bright);">TITLE PARTNER</h3>
+                        <ul class="text-left space-y-3 text-sm text-neutral-100">
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Brand integrated in team name</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Custom video content</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Branded pit-booth station</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Personalised 3D car replica</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> All Associate + Official perks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Official Partner -->
+                <div class="tier-card p-8 rounded-2xl" style="border-top-color: var(--crimson);" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-neutral-500 text-xs font-bold sub-heading">STARTING FROM</p>
+                    <p class="text-3xl sm:text-4xl font-black mb-1" style="font-family: 'Playfair Display', serif;">₹25,000</p>
+                    <h3 class="font-bold mb-5 sub-heading text-sm" style="color: var(--crimson-bright);">OFFICIAL PARTNER</h3>
+                    <ul class="text-left space-y-3 text-sm text-neutral-300">
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Logo on display panels</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Co-branded social posts</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Enterprise portfolio feature</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> All Associate perks included</li>
+                    </ul>
+                </div>
+
+                <!-- Associate Partner -->
+                <div class="tier-card p-8 rounded-2xl" style="border-top-color: var(--neutral-3);" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-neutral-500 text-xs font-bold sub-heading">STARTING FROM</p>
+                    <p class="text-3xl sm:text-4xl font-black mb-1" style="font-family: 'Playfair Display', serif;">₹10,000</p>
+                    <h3 class="font-bold mb-5 sub-heading text-sm" style="color: var(--crimson-bright);">ASSOCIATE PARTNER</h3>
+                    <ul class="text-left space-y-3 text-sm text-neutral-300">
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Logo on race car body</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Logo on team jerseys</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Social media mentions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DESKTOP / TABLET LAYOUT (md and up) -->
+            <div class="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 items-end">
+                <!-- Associate -->
+                <div class="tier-card p-8 lg:p-10 rounded-2xl" style="border-top-color: var(--neutral-3);" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-neutral-500 text-xs font-bold sub-heading">STARTING FROM</p>
+                    <p class="text-3xl lg:text-4xl font-black mb-1" style="font-family: 'Playfair Display', serif;">₹10,000</p>
+                    <h3 class="font-bold mb-6 sub-heading text-sm" style="color: var(--crimson-bright);">ASSOCIATE PARTNER</h3>
+                    <ul class="text-left space-y-4 text-sm text-neutral-300">
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Logo on race car body</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Logo on team jerseys</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Social media mentions</li>
+                    </ul>
+                </div>
+
+                <!-- Title (Highlighted) — badge sits ABOVE the card -->
+                <div class="flex flex-col items-center" data-aos="fade-up">
+                    <div class="recommended-badge">★ MOST IMPACTFUL</div>
+                    <div class="tier-card p-8 lg:p-10 rounded-b-2xl rounded-t-none w-full shadow-2xl z-10" style="border-top: 4px solid var(--crimson-bright); background: var(--neutral-2);">
+                        <p class="text-neutral-500 text-xs font-bold sub-heading">STARTING FROM</p>
+                        <p class="text-4xl lg:text-5xl font-black mb-1" style="font-family: 'Playfair Display', serif;">₹50,000</p>
+                        <h3 class="font-bold mb-6 sub-heading text-sm" style="color: var(--crimson-bright);">TITLE PARTNER</h3>
+                        <ul class="text-left space-y-4 text-sm text-neutral-100">
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Brand integrated in team name</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Custom video content</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Branded pit-booth station</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Personalised 3D car replica</li>
+                            <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> All Associate + Official perks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Official -->
+                <div class="tier-card p-8 lg:p-10 rounded-2xl" style="border-top-color: var(--crimson);" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-neutral-500 text-xs font-bold sub-heading">STARTING FROM</p>
+                    <p class="text-3xl lg:text-4xl font-black mb-1" style="font-family: 'Playfair Display', serif;">₹25,000</p>
+                    <h3 class="font-bold mb-6 sub-heading text-sm" style="color: var(--crimson-bright);">OFFICIAL PARTNER</h3>
+                    <ul class="text-left space-y-4 text-sm text-neutral-300">
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Logo on display panels</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Co-branded social posts</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> Enterprise portfolio feature</li>
+                        <li class="flex items-start gap-2"><span style="color: var(--crimson-bright);">✦</span> All Associate perks included</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BRAND VISIBILITY -->
+    <section class="py-16 sm:py-20 md:py-28" style="background: var(--off-white); color: var(--dark-base);">
+        <div class="container mx-auto px-5 sm:px-8 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div data-aos="fade-right">
+                <span class="section-tag">BRAND PLACEMENT</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mt-3 mb-6 sm:mb-8 leading-tight">Everywhere<br>That Matters</h2>
+                <p class="text-neutral-600 text-sm sm:text-base md:text-lg mb-8 sm:mb-10">Your brand won't just be a logo—it will be an integral part of ZenithFive's visual identity on and off the track.</p>
+
+                <div class="grid grid-cols-3 gap-4 sm:gap-6 text-center">
+                    <div>
+                        <p class="stat-number text-2xl sm:text-3xl md:text-4xl">40+</p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-neutral-500 uppercase sub-heading mt-1">Teams Competing</p>
+                    </div>
+                    <div>
+                        <p class="stat-number text-2xl sm:text-3xl md:text-4xl">25+</p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-neutral-500 uppercase sub-heading mt-1">Industry Judges</p>
+                    </div>
+                    <div>
+                        <p class="stat-number text-2xl sm:text-3xl md:text-4xl">10K+</p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-neutral-500 uppercase sub-heading mt-1">Impressions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 sm:space-y-6" data-aos="fade-left">
+                <div class="placement-card p-4 sm:p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold tracking-tight uppercase text-sm sm:text-base" style="font-family: 'Playfair Display', serif;">The Race Car</h4>
+                    <p class="text-xs sm:text-sm text-neutral-500 mt-1">Nose cone, sidepods, and rear wing branding placements.</p>
+                </div>
+                <div class="placement-card p-4 sm:p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold tracking-tight uppercase text-sm sm:text-base" style="font-family: 'Playfair Display', serif;">Team Apparel</h4>
+                    <p class="text-xs sm:text-sm text-neutral-500 mt-1">Primary chest and sleeve logo placement for all photos and events.</p>
+                </div>
+                <div class="placement-card p-4 sm:p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold tracking-tight uppercase text-sm sm:text-base" style="font-family: 'Playfair Display', serif;">Pit Display</h4>
+                    <p class="text-xs sm:text-sm text-neutral-500 mt-1">Large-format branding panels visible to all attendees and judges.</p>
+                </div>
+                <div class="placement-card p-4 sm:p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold tracking-tight uppercase text-sm sm:text-base" style="font-family: 'Playfair Display', serif;">Digital Presence</h4>
+                    <p class="text-xs sm:text-sm text-neutral-500 mt-1">Featured across our social media channels, website, and portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section id="contact" class="py-16 sm:py-20 md:py-28 relative overflow-hidden stripe-bg" style="background-color: var(--dark-base);">
+        <div class="container mx-auto px-5 sm:px-8 md:px-10 text-center relative z-10">
+            <div data-aos="zoom-in">
+                <h2 class="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-4 leading-tight">LET'S BUILD SOMETHING<br><span style="color: var(--crimson-bright);">LEGENDARY.</span></h2>
+                <p class="text-neutral-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-10 sm:mb-14">
+                    Back the next generation of engineers and gain high-octane visibility for your brand on a global stage.
+                </p>
+
+                <div class="glass-panel p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl sm:rounded-3xl inline-block text-left w-full max-w-lg md:max-w-xl">
+                    <div class="flex flex-col sm:flex-row items-center gap-8 sm:gap-10 md:gap-12">
+                        <div class="text-center sm:text-left w-full sm:w-auto">
+                            <h3 class="text-2xl sm:text-3xl font-black mb-4 sm:mb-6" style="font-family: 'Playfair Display', serif; color: var(--off-white);">CONTACT US</h3>
+                            <div class="mb-4 sm:mb-6">
+                                <h4 class="text-xl sm:text-2xl font-bold" style="font-family: 'Playfair Display', serif;">SUMIT</h4>
+                                <p class="font-bold uppercase text-[10px] sm:text-xs sub-heading mt-1" style="color: var(--crimson-bright);">Project Manager</p>
+                            </div>
+                            <div class="space-y-2 sm:space-y-3">
+                                <p class="text-neutral-300 flex items-center gap-2 sm:gap-3 justify-center sm:justify-start text-sm sm:text-base">
+                                    <span style="color: var(--crimson-bright);">✉</span>
+                                    <a href="mailto:5zenith.f1@gmail.com" class="hover:text-white transition break-all">5zenith.f1@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-2 sm:p-3 rounded-lg sm:rounded-xl flex-shrink-0">
+                            <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center rounded-lg">
+                                <img src="qr.png" alt="QR Code" class="w-full h-full object-contain rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 sm:py-6 border-t text-center text-[9px] sm:text-[10px] uppercase sub-heading px-4" style="border-color: rgba(185,28,28,0.2); color: var(--neutral-3); letter-spacing: 0.15em;">
+        © 2026 ZENITHFIVE &nbsp;|&nbsp; F1 IN SCHOOLS &nbsp;|&nbsp; ALL RIGHTS RESERVED
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                closeMobileMenu();
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('open');
+            menuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('open');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+
+        menuOverlay.addEventListener('click', closeMobileMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
